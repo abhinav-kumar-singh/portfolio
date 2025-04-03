@@ -1,0 +1,37 @@
+.title_container {
+  margin: 0px 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title:hover {
+  cursor: pointer;
+}
+
+.body {
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.active_chevron {
+  rotate: 0deg;
+}
+
+.inactive__chevron {
+  rotate: -90deg;
+}

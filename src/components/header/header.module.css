@@ -1,0 +1,162 @@
+.primary {
+  background-color: rgb(var(--top-header-primary));
+  color: rgb(var(--primary-text-color));
+  height: var(--header-height-primary);
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: var(--primary-radius);
+  border-top-right-radius: var(--primary-radius);
+  position: relative;
+}
+
+.secondary {
+  background-color: rgb(var(--top-header-secondary));
+  height: var(--header-height-secondary);
+  color: rgb(var(--primary-text-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.icon {
+  height: 16px;
+  width: 16px;
+}
+
+.search_icon {
+  height: 12px;
+  width: 12px;
+}
+
+.searchBar {
+  border: 1px solid rgb(var(--border));
+  width: 400px;
+  height: 22px;
+  border-radius: var(--secondary-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.search_bar_field {
+  position: absolute;
+  top: 25px;
+  z-index: 1;
+  background: rgb(var(--ternary));
+  color: rgb(var(--light-grey));
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.search_bar_field_value {
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+.about_file {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.field_label {
+  font-weight: bold;
+}
+
+.field_location {
+  font-size: 10px;
+  max-width: 165px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.active {
+  visibility: visible;
+}
+
+.inactive {
+  visibility: hidden;
+}
+
+.searchBar_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: var(--secondary-font-size);
+  opacity: 0.6;
+}
+
+.header_action {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  left: 10px;
+}
+
+.cross {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(var(--light-red));
+  user-select: none;
+}
+
+.minimize {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(var(--light-yellow));
+}
+
+.expand {
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(var(--light-green));
+}
+
+.cross::after,
+.minimize::after,
+.expand::after {
+  content: '';
+}
+
+/* On hover of header_action, show respective symbols */
+.header_action:hover .cross::after {
+  content: 'X';
+  color: rgb(var(--black));
+  font-size: 9px;
+  position: relative;
+  bottom: 3px;
+  left: 3px;
+}
+
+.header_action:hover .minimize::after {
+  content: '-';
+  color: rgb(var(--black));
+  font-size: 10px;
+  position: relative;
+  bottom: 1px;
+  left: 3px;
+}
+
+.header_action:hover .expand::after {
+  content: '?';
+  color: rgb(var(--black));
+  font-size: 9px;
+  position: relative;
+  bottom: 2px;
+  left: 4px;
+}
