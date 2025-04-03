@@ -1,5 +1,6 @@
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+
 import { defineConfig } from '@rspack/cli';
 import { rspack } from '@rspack/core';
 import RefreshPlugin from '@rspack/plugin-react-refresh';
