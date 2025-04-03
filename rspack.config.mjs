@@ -75,7 +75,7 @@ export default defineConfig({
   },
   plugins: [
     new rspack.HtmlRspackPlugin({
-      template: './index.html',
+      template: './public/index.html',
     }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
