@@ -1,0 +1,177 @@
+/* about */
+
+.container {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--color1)),
+    rgb(var(--color2))
+  );
+}
+
+.about_category {
+  background-color: rgb(var(--background2));
+  border-radius: 0.75rem;
+  box-shadow:
+    0 10px 15px -3px rgb(var(--shadow1)),
+    0 4px 6px -2px rgb(var(--shadow2));
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgb(var(--border2));
+  width: 85%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0px;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 16px;
+  color: rgb(var(--primary-text-color));
+}
+
+.profileImage {
+  flex: 0 0 220px;
+}
+
+.profileInfo {
+  flex: 1;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(var(--purple));
+  padding-bottom: 10px;
+}
+
+.titleWrapper,
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-light);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgb(var(--purple));
+  color: rgb(var(--primary-text-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  transform: translateY(-3px);
+}
+
+.bioSection,
+.interestsSection {
+  padding: 20px;
+  color: rgb(var(--primary-text-color));
+  font-size: 16px;
+}
+
+.bioSection p {
+  line-height: 1.8;
+}
+
+.bio_and_interests {
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--color1)),
+    rgb(var(--color2))
+  );
+  padding: 12px;
+  border-radius: inherit;
+  font-size: 14px;
+}
+
+.bio {
+}
+
+.sectionIcon {
+  vertical-align: text-bottom;
+  color: var(--primary);
+  color: rgb(var(--purple));
+}
+
+.bioSection h3,
+.interestsSection h3 {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(var(--purple));
+}
+
+.interestsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Interest Module */
+
+.card {
+  background-color: var(--background);
+  border-radius: 12px;
+  background: rgb(var(--background1));
+  box-shadow: 0 4px 15px rgb(var(--shadow2));
+  padding: 15px;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
+  border-radius: 4px 0 0 4px;
+}
+
+.card p {
+  color: rgb(var(--primary-text-color));
+  line-height: 1.5;
+}
+
+/* Profile Image */
+
+.imageContainer {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgb(var(--shadow3));
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}

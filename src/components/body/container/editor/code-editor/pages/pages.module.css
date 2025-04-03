@@ -1,0 +1,8 @@
+.code_background {
+  background-color: rgb(var(--quaternary)) !important;
+  max-width: 100% !important; /* Adjust width as needed */
+  white-space: pre-wrap !important; /* Ensures text wraps */
+  word-break: break-word !important; /* Breaks long words */
+  overflow-wrap: break-word !important;
+  max-height: 430px !important;
+}

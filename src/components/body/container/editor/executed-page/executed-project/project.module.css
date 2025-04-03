@@ -1,0 +1,22 @@
+.project_container {
+  text-align: center;
+  height: 100%;
+  padding-top: 15px;
+}
+
+.project_mapper {
+  text-align: justify;
+}
+
+.project_desc {
+  color: rgb(209, 213, 219);
+}
+
+.link {
+  all: unset;
+  color: rgb(var(--purple));
+  display: flex;
+  margin-top: 15px;
+  cursor: pointer;
+  gap: 10px;
+}
