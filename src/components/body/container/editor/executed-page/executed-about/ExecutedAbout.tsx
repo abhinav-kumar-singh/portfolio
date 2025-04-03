@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../../../../../common/modal';
-import About from './about';
+import About from './About';
 
 const ExecutedAbout = ({
   setIsRunClicked,

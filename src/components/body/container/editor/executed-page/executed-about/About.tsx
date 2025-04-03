@@ -13,7 +13,6 @@ import {
 import ProfileImage from './ProfileImage';
 import InterestCard from './InterestCard';
 import * as styles from './about.module.css';
-import * as commonStyle from '../common.module.css';
 import TypingEffect from '../../../../../common/typing-effect/TypingEffect';
 import { DEVELOPER } from '../../../../../../constants/all';
 
