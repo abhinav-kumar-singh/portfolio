@@ -1,0 +1,54 @@
+.terminal_action {
+  display: flex;
+  gap: 15px;
+  padding: 5px 5px 5px 15px;
+  border: 1px solid rgb(var(--border));
+  color: rgb(var(--primary-text-color));
+  opacity: 0.6;
+  border-bottom: none;
+}
+
+.active {
+  color: rgb(var(--folder-color));
+  padding-bottom: 5px;
+  border-bottom: 1px solid;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}
+
+.terminal_output {
+  color: rgb(var(--primary-text-color));
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.command {
+  color: rgb(var(--green-yellow));
+}
+
+.server {
+  opacity: 0.6;
+}
+
+@keyframes glow {
+  from {
+    color: rgb(var(--url-link));
+  }
+  to {
+    color: rgb(var(--green-yellow));
+  }
+}
+
+.localhost {
+  a {
+    color: rgb(var(--url-link));
+    cursor: pointer;
+    text-decoration: none;
+    animation: glow 1.5s infinite alternate;
+  }
+}
