@@ -1,0 +1,136 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 250px 20px 10px 20px;
+}
+
+.content {
+  z-index: 10;
+}
+
+.codeLine {
+  display: flex;
+  font-family: monospace;
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.codeNumber {
+  color: var(--code-line-number-color, #6b7280);
+  text-align: right;
+  user-select: none;
+}
+
+.codeComment {
+  white-space: pre-wrap;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.codeContent {
+  white-space: pre-wrap;
+  font-size: 14px;
+  color: #9ca3af;
+  display: flex;
+  gap: 5px;
+}
+
+.codePurple {
+  color: var(--code-purple, #a78bfa);
+}
+
+.codeBlue {
+  color: var(--code-blue, #60a5fa);
+}
+
+.codeOrange {
+  color: var(--code-orange, #fbbf24);
+}
+
+.codeYellow {
+  color: var(--code-yellow, #facc15);
+}
+
+.textWhite {
+  color: white;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name_container {
+  margin: 30px 0px;
+}
+
+.subHeading {
+  color: var(--card-foreground);
+}
+
+.textGradient {
+  background-clip: text;
+  color: #833fff;
+  font-size: 28px;
+}
+
+.subtext {
+  color: var(--muted-foreground, #9ca3af);
+}
+
+.buttonContainer {
+  display: flex;
+  margin: 30px 0px;
+  gap: 15px;
+}
+
+.ctaButton {
+  padding: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 10px;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.primaryBtn {
+  background-color: var(--primary);
+  color: white;
+}
+
+.primaryBtn:hover {
+  background-color: rgba(var(--primary-rgb), 0.9);
+}
+
+.secondaryBtn {
+  border: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.secondaryBtn:hover {
+  border-color: var(--primary);
+}
+
+.scrollBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+}
+
+.scroll_icon {
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  padding: 10px;
+}

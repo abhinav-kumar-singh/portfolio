@@ -74,6 +74,7 @@ export default defineConfig({
       },
     ],
   },
+  stats: 'normal',
   plugins: [
     new rspack.HtmlRspackPlugin({
       template: './public/index.html',
@@ -89,6 +90,13 @@ export default defineConfig({
     ],
   },
   experiments: {
-    futureDefaults: true, // Keep Rspack's default optimizations
+    futureDefaults: false, // Keep Rspack's default optimizations
   },
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+    allowedHosts: 'all',
+    hot: true,
+  },
+  // mode: 'production',
 });

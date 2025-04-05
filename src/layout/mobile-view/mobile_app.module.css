@@ -1,0 +1,40 @@
+:root {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  --background: rgb(6, 4, 2);
+  --foreground: rgb(223, 227, 241);
+  --card: rgb(6, 4, 2);
+  --card-foreground: rgb(223, 227, 241);
+  --popover: rgb(6, 4, 2);
+  --popover-foreground: rgb(149, 158, 176);
+  --primary: rgb(43, 104, 255);
+  --primary-foreground: rgb(8, 10, 23);
+  --secondary: rgb(8, 10, 23);
+  --secondary-foreground: rgb(247, 250, 255);
+  --muted: rgb(9, 11, 22);
+  --muted-foreground: rgb(131, 138, 153);
+  --accent: rgb(8, 10, 23);
+  --accent-foreground: rgb(247, 250, 255);
+  --destructive: rgb(112, 24, 24);
+  --destructive-foreground: rgb(247, 250, 255);
+  --border: rgb(49, 52, 61);
+  --input: rgb(49, 52, 61);
+  --ring: rgb(212, 220, 241);
+  --color-primary: rgb(43, 104, 255);
+  --color-secondary: rgb(8, 10, 23);
+  --color-muted: rgb(9, 11, 22);
+  --color-border: rgb(49, 52, 61);
+  --color-foreground: rgb(223, 227, 241);
+  --color-foreground-muted: rgb(131, 138, 153);
+  --color-background: rgb(6, 4, 2);
+  --color-card: rgb(6, 4, 2);
+  --color-blue: rgb(102, 179, 255);
+  --color-purple: rgb(204, 153, 255);
+  --color-green: rgb(102, 255, 153);
+  --color-yellow: rgb(255, 217, 102);
+  --color-orange: rgb(255, 153, 102);
+}

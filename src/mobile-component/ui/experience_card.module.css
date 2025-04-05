@@ -1,0 +1,61 @@
+.experienceCard {
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  padding: 15px 15px 15px 0px;
+  margin-left: 20px;
+}
+
+.experienceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.iconContainer {
+  border-radius: 9999px;
+  background-color: var(--color-secondary);
+}
+
+.icon {
+  color: var(--color-yellow);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.position {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--color-blue);
+}
+
+.company {
+  font-size: 12px;
+  color: var(--color-purple);
+}
+
+.responsibilitiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.responsibility {
+  color: var(--color-foreground-muted);
+  position: relative;
+}
