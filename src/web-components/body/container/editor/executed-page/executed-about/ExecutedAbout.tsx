@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import About from './about';
+import About from './About';
 import Modal from '../../../../../../common-component/modal/Modal';
 
 const ExecutedAbout = ({
