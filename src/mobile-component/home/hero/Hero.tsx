@@ -143,10 +143,10 @@ const Hero = () => {
         className={styles.scrollBtn}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
-        // transition={{
-        //   opacity: { delay: 1.4, duration: 4 },
-        //   y: { repeat: Infinity, duration: 5, ease: 'easeInOut' },
-        // }}
+        transition={{
+          opacity: { delay: 1.4, duration: 1 },
+          y: { repeat: Infinity, duration: 2, ease: 'easeInOut' },
+        }}
       >
         <ArrowDown size={20} className={styles.scroll_icon} />
       </motion.button>
