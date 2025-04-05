@@ -1,0 +1,20 @@
+.files {
+  display: flex;
+  gap: 15px;
+  margin: 5px;
+  color: rgb(var(--primary-text-color));
+}
+
+.hero {
+  margin: 0px 8px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 20px);
+  box-shadow: 0 0px 20px rgb(var(--layout-shadow));
+  border-radius: 10px;
+}
+
+.body {
+  height: 100%;
+  position: relative;
+}

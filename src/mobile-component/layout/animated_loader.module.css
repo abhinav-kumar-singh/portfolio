@@ -1,0 +1,27 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+.title {
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bar {
+  width: 250px;
+  height: 5px;
+  background-color: #ff7e5f;
+  border-radius: 9999px;
+}

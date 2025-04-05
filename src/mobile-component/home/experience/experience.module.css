@@ -1,0 +1,44 @@
+.section {
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.heading {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.textGradient {
+  background: linear-gradient(to right, var(--tw-gradient-stops));
+  -webkit-background-clip: text;
+}
+
+.timeline {
+  position: relative;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timelineItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dot {
+  background-color: var(--color-primary);
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  left: -4px;
+}
