@@ -11,51 +11,6 @@ import * as styles from './experience.module.css';
 import * as commonStyle from '../common.module.css';
 import { EXPERIENCES } from '../../../../../../constants/all';
 
-// const experience = [
-//   {
-//     position: 'Software Development Engineer',
-//     company: 'LeadSquared',
-//     duration: 'April 2023 - Present',
-//     responsibilities: [
-//       'Optimized product performance, reducing initial load time from 12s to 3s, improving user experience significantly.',
-//       'Engaged with customers to address queries, troubleshoot issues, and provide timely support.',
-//       'Developed and implemented critical features, ensuring a seamless user experience across multiple devices.',
-//       'Collaborated with cross-functional teams to integrate new features efficiently and maintain product consistency.',
-//       'Conducted thorough code reviews, ensuring high-quality code and adherence to best practices.',
-//     ],
-//   },
-//   {
-//     position: 'Associate Software Development Engineer',
-//     company: 'LeadSquared',
-//     duration: 'October 2022 - March 2023',
-//     responsibilities: [
-//       'Implemented the advanced search feature, one of the most critical functionalities in the Marvin app.',
-//       'Collaborated closely with designers and backend teams to ensure seamless feature integration.',
-//       'Maintained and improved the Calendar feature, significantly contributing to US customer retention.',
-//       'Provided direct customer support, resolving issues and enhancing user satisfaction.',
-//     ],
-//   },
-//   {
-//     position: 'Software Developer Intern',
-//     company: 'LeadSquared',
-//     duration: 'October 2021 - September 2022',
-//     responsibilities: [
-//       'Diagnosed and fixed high-priority bugs, improving platform stability.',
-//       'Gained experience in code reviews, maintaining code quality, and following best practices.',
-//       'Developed new features and successfully delivered them to the team.',
-//     ],
-//   },
-//   {
-//     position: 'Software Engineer Intern',
-//     company: 'Highradius',
-//     duration: 'May 2021 - September 2021',
-//     responsibilities: [
-//       'Developed an email automation feature to streamline communication processes.',
-//       'Learned and applied best practices in code quality, reviews, and software development.',
-//     ],
-//   },
-// ];
-
 const ExperienceTimeline = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -105,7 +60,7 @@ const ExperienceTimeline = () => {
     }
   };
 
-  const years = calculateYears();
+  const years = '3' || calculateYears();
 
   return (
     <div className={`${styles.experienceContainer} ${commonStyle.section}`}>
@@ -117,7 +72,7 @@ const ExperienceTimeline = () => {
       >
         <div className={styles.heading}>My Professional Journey</div>
         <div className={styles.yearsIndicator}>
-          <div>{years}+ Years of Experience*</div>
+          <div>{years}+ Years of Experience</div>
         </div>
       </motion.div>
 
