@@ -36,6 +36,12 @@
   width: 100%;
 }
 
+.empty {
+  margin: 12px 20px;
+  color: rgb(var(--light-grey));
+  font-size: 13px;
+}
+
 .input {
   width: 100%;
   padding: 6px;

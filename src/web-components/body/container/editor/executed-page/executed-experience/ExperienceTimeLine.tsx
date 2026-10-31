@@ -60,7 +60,7 @@ const ExperienceTimeline = () => {
     }
   };
 
-  const years = '3' || calculateYears();
+  const years = '4' || calculateYears();
 
   return (
     <div className={`${styles.experienceContainer} ${commonStyle.section}`}>

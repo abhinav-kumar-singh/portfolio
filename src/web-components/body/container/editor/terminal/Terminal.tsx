@@ -1,41 +1,37 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import useFileStore from '../../../../../store/file.store';
 import * as styles from './terminal.module.css';
-import TERMINAL_ACTINS from '../../../../../constants/terminal-action';
 
 const Terminal = () => {
+  const logs = useFileStore((state) => state.logs);
+  const endRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [logs]);
+
   return (
-    <div>
+    <div className={styles.panel}>
       <div className={styles.terminal_action}>
-        {TERMINAL_ACTINS.map((action) => {
+        <div className={styles.active}>TERMINAL</div>
+      </div>
+      <div className={styles.terminal_output}>
+        {logs.map((line, index) => {
+          const prompt = line.startsWith('abhinav.singh@MACPRO');
+          const idle = line === 'abhinav.singh@MACPRO ~ %';
           return (
             <div
-              key={action.id}
-              className={action.id === 1 ? styles.active : ''}
+              key={`${index}-${line}`}
+              className={prompt ? styles.command : styles.server}
             >
-              {action.label}
+              {line}
+              {idle && index === logs.length - 1 ? (
+                <span className={styles.cursor} />
+              ) : null}
             </div>
           );
         })}
-      </div>
-      <div className={styles.terminal_output}>
-        <div className={styles.command}>$ pnpm run start </div>
-        <div className={styles.server}>Starting development server... </div>
-        <div className={styles.server}>Compiled successfully. </div>
-        <div className={styles.server}>
-          You can now view portfolio-app in the browser.
-        </div>
-        <div className={styles.localhost}>
-          Local:{' '}
-          <a
-            href="http://www.linkedin.com/in/abhinav-singh-602934267"
-            target="_blank"
-          >
-            http://localhost:3000
-          </a>
-        </div>
-        <div className={styles.server}>
-          Rspack compiled successfully in 83 ms
-        </div>
+        <div ref={endRef} />
       </div>
     </div>
   );

@@ -1,0 +1,68 @@
+.shell,
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+}
+
+.shell {
+  background: #060a14;
+}
+
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 10, 20, 0.55);
+}
+
+.fill,
+.panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  width: 70%;
+  height: 70%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #060a14;
+  display: block;
+}
+
+.editor {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  bottom: 16px;
+  border: 1px solid rgba(136, 150, 179, 0.45);
+  border-radius: 999px;
+  background: rgba(6, 10, 20, 0.82);
+  color: #eaf0fb;
+  font: 500 13px/1 system-ui, sans-serif;
+  letter-spacing: 0.04em;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.editor:hover,
+.editor:focus-visible {
+  border-color: #2dd4bf;
+  outline: none;
+}
+
+@media (max-width: 800px) {
+  .panel {
+    width: 92%;
+    height: 86%;
+  }
+}

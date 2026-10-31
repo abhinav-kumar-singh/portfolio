@@ -1,8 +1,5 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import MobileNav from './MobileNav';
-import AnimatedLoader from './AnimatedLoader';
 import * as styles from './mobile_layout.module.css';
 
 interface LayoutProps {
@@ -11,16 +8,6 @@ interface LayoutProps {
 
 const MobileLayout: React.FC<LayoutProps> = ({ children }) => {
   const [activeSection, setActiveSection] = useState('home');
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Handle initial loading animation
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Update active section based on scroll position
   useEffect(() => {
@@ -50,25 +37,11 @@ const MobileLayout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className={styles.background_container}>
-      {/* Loading screen */}
-      <AnimatedLoader isLoading={isLoading} />
-
-      {!isLoading && (
-        <>
-          <MobileNav
-            activeSection={activeSection}
-            setActiveSection={setActiveSection}
-          />
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className={styles.main}
-          >
-            {children}
-          </motion.main>
-        </>
-      )}
+      <MobileNav
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
+      <main className={styles.main}>{children}</main>
     </div>
   );
 };

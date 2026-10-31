@@ -1,21 +1,20 @@
-import React from 'react';
-import MobileLayout from '../../mobile-component/layout/MobileLayout';
-import Hero from '../../mobile-component/home/hero/Hero';
-import Skills from '../../mobile-component/home/skills/Skills';
-import Experience from '../../mobile-component/home/experience/Experience';
-import Projects from '../../mobile-component/home/project/Project';
-import Contact from '../../mobile-component/home/contact/Contact';
-import './mobile_app.module.css';
+import React, { useEffect, useState } from 'react';
+import { PreviewFrame } from '../../preview/PreviewGate';
+import AnimatedLoader from '../../mobile-component/layout/AnimatedLoader';
 
 const MobileView = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <MobileLayout>
-      <Hero />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
-    </MobileLayout>
+    <>
+      <AnimatedLoader isLoading={isLoading} />
+      <PreviewFrame />
+    </>
   );
 };
 

@@ -6,11 +6,14 @@ import SkillTag from '../../ui/SkillTag';
 import * as styles from './skills.module.css';
 import { useScrollAnimation } from '../../../common-component/custom-hook/useScrollAnimation';
 
+const formatCategoryName = (name: string) => {
+  return name
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/^./, (str) => str.toUpperCase());
+};
+
 const Skills = () => {
   const { ref, controls } = useScrollAnimation();
-
-  // Flatten skills array for display
-  const allSkills = Object.values(SKILLS).flat();
 
   return (
     <section id="about" className={styles.aboutSection}>
@@ -74,7 +77,7 @@ const Skills = () => {
                 {Array.isArray(skills) ? (
                   <>
                     <div className={styles.category}>
-                      {category.charAt(0).toUpperCase() + category.slice(1)}
+                      {formatCategoryName(category)}
                     </div>
                     <div className={styles.skillWrap}>
                       {skills.map((skill, index) => (

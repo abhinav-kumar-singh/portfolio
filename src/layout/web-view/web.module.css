@@ -1,20 +1,34 @@
 .files {
-  display: flex;
-  gap: 15px;
-  margin: 5px;
-  color: rgb(var(--primary-text-color));
+  display: none;
 }
 
 .hero {
-  margin: 0px 8px 8px 8px;
+  margin: 8px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 20px);
+  height: calc(100vh - 16px);
+  overflow: hidden;
   box-shadow: 0 0px 20px rgb(var(--layout-shadow));
   border-radius: 10px;
 }
 
 .body {
-  height: 100%;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
   position: relative;
+}
+
+.build {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(var(--ternary));
+  color: rgb(var(--light-yellow-green));
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: var(--secondary-font-size);
 }

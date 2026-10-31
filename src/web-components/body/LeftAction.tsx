@@ -5,16 +5,15 @@ import {
   LEFT_TOP_ACTION,
 } from '../../constants/left-action';
 import * as styles from './body.module.css';
+import { CONTACT } from '../../constants/all';
 import useFileStore, { setAction } from '../../store/file.store';
-
-const WORKING_ACTION = [ACTION.Files, ACTION.Search, ACTION.Profile];
 
 const LeftAction = () => {
   const selectedAction = useFileStore((state) => state.selectedAction);
   const handleActionClick = (action: ACTION) => {
     switch (action) {
       case ACTION.Profile:
-        window.open('http://www.linkedin.com/in/abhinav-singh-602934267');
+        window.open(CONTACT.linkedin);
         break;
       case ACTION.Search:
         setAction(ACTION.Search);
@@ -31,27 +30,32 @@ const LeftAction = () => {
     <div className={styles.left_action}>
       <div className={styles.action}>
         {LEFT_TOP_ACTION.map((action) => {
+          const active = action.label === selectedAction;
           return (
-            <action.comp
-              className={`${styles.icon} ${action.label === selectedAction ? styles.active : ''} ${WORKING_ACTION.includes(action.label) ? styles.working_action : styles.not_working_action}`}
+            <button
               key={action.id}
+              className={`${styles.activity} ${active ? styles.activityActive : ''}`}
+              aria-label={action.label}
               onClick={() => handleActionClick(action.label)}
-            />
+            >
+              <action.comp
+                className={`${styles.icon} ${active ? styles.active : ''}`}
+              />
+            </button>
           );
         })}
       </div>
       <div className={styles.action}>
         {LEFT_BOTTOM_ACTION.map((action) => {
           return (
-            <div
-              onClick={() => handleActionClick(action.label)}
+            <button
               key={action.id}
+              className={styles.activity}
+              aria-label={action.label}
+              onClick={() => handleActionClick(action.label)}
             >
-              <action.comp
-                className={`${styles.icon} ${WORKING_ACTION.includes(action.label) ? styles.working_action : styles.not_working_action}`}
-                key={action.id}
-              />
-            </div>
+              <action.comp className={styles.icon} />
+            </button>
           );
         })}
       </div>

@@ -19,6 +19,9 @@ const MobileNav: React.FC<MobileNavProps> = ({
   const handleNavigation = (section: string) => {
     setActiveSection(section);
     setIsOpen(false);
+    window.dispatchEvent(
+      new CustomEvent('portfolio-station', { detail: section }),
+    );
     const element = document.getElementById(section);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -27,7 +30,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
 
   const navItems = [
     { id: 'home', label: 'Home', Icon: Home },
-    { id: 'about', label: 'About', Icon: User },
+    { id: 'skills', label: 'Skills', Icon: User },
     { id: 'experience', label: 'Experience', Icon: Briefcase },
     { id: 'projects', label: 'Projects', Icon: Code },
     { id: 'contact', label: 'Contact', Icon: Mail },

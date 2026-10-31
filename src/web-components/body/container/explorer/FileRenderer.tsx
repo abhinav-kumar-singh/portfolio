@@ -1,6 +1,10 @@
 import React from 'react';
 import * as styles from '../container.module.css';
-import useFileStore, { setFileName } from '../../../../store/file.store';
+import useFileStore, {
+  pushLog,
+  setFileName,
+  setStatusLabel,
+} from '../../../../store/file.store';
 import { FileJson } from 'lucide-react';
 import { FileSchemaName } from '../../../../constants/files.types';
 
@@ -12,8 +16,9 @@ const FileRenderer = ({
   showMarker?: boolean;
 }) => {
   const name = useFileStore((state) => state.name);
-  const handleFileClick = (fileName: FileSchemaName) => {
+  const handleFileClick = (fileName: FileSchemaName, label: string) => {
     setFileName(fileName);
+    pushLog(`open src/portfolio/${label}`);
   };
   return (
     <div className={styles.accordion_children_container}>
@@ -27,7 +32,9 @@ const FileRenderer = ({
             className={`${styles.children_file} ${
               name === file.value ? styles.active_child : ''
             }`}
-            onClick={() => handleFileClick(file.value)}
+            onClick={() => handleFileClick(file.value, file.label)}
+            onMouseEnter={() => setStatusLabel(`src/portfolio/${file.label}`)}
+            onMouseLeave={() => setStatusLabel('')}
           >
             <FileJson className={styles.children_icon} />
             {file.label}

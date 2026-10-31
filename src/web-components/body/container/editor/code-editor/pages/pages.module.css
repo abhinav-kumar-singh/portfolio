@@ -1,8 +1,37 @@
+.editorRow {
+  display: flex;
+  min-height: 100%;
+  background: rgb(var(--quaternary));
+}
+
 .code_background {
+  flex: 1;
+  margin: 0;
   background-color: rgb(var(--quaternary)) !important;
-  max-width: 100% !important; /* Adjust width as needed */
-  white-space: pre-wrap !important; /* Ensures text wraps */
-  word-break: break-word !important; /* Breaks long words */
+  color: rgb(212, 212, 212);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
   overflow-wrap: break-word !important;
-  max-height: 430px !important;
+  max-height: none !important;
+  padding: 8px 16px 24px 48px !important;
+}
+
+.minimap {
+  width: 64px;
+  flex-shrink: 0;
+  padding: 8px 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0.55;
+}
+
+.minimapLine {
+  display: block;
+  height: 2px;
+  max-width: 100%;
+  background: rgb(180, 180, 180);
 }

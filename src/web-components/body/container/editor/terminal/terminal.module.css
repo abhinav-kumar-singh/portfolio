@@ -1,30 +1,37 @@
+.panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: rgb(204, 204, 204);
+  background: rgb(var(--quaternary));
+}
+
 .terminal_action {
   display: flex;
-  gap: 15px;
-  padding: 5px 5px 5px 15px;
-  border: 1px solid rgb(var(--border));
-  color: rgb(var(--primary-text-color));
-  opacity: 0.6;
-  border-bottom: none;
+  align-items: center;
+  height: 28px;
+  padding: 0 12px;
+  color: rgb(255, 255, 255);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.06em;
 }
 
 .active {
-  color: rgb(var(--folder-color));
-  padding-bottom: 5px;
-  border-bottom: 1px solid;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  height: 28px;
+  display: flex;
+  align-items: center;
 }
 
 .terminal_output {
-  color: rgb(var(--primary-text-color));
-  font-size: 12px;
+  padding: 4px 12px 8px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 2px;
+  overflow: auto;
 }
 
 .command {
@@ -32,23 +39,31 @@
 }
 
 .server {
-  opacity: 0.6;
-}
-
-@keyframes glow {
-  from {
-    color: rgb(var(--url-link));
-  }
-  to {
-    color: rgb(var(--green-yellow));
-  }
+  color: rgb(204, 204, 204);
 }
 
 .localhost {
-  a {
-    color: rgb(var(--url-link));
-    cursor: pointer;
-    text-decoration: none;
-    animation: glow 1.5s infinite alternate;
+  color: rgb(var(--url-link));
+}
+
+.cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  margin-left: 2px;
+  background: rgb(204, 204, 204);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
   }
 }

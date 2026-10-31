@@ -20,7 +20,7 @@ const About = () => {
   // const developer = {
   //   name: 'Abhinav Kumar Singh',
   //   title: 'Frontend Developer',
-  //   location: 'Bangalore, Karnataka, India',
+  //   location: 'Gurgaon, India',
   //   bio: "I'm a passionate frontend developer with a keen eye for design, performance, and a love for creating intuitive, responsive web applications. My journey in web development started 3 years ago, and I've been obsessed with crafting beautiful, fast, and seamless user experiences ever since. I focus on writing efficient, scalable code, optimizing rendering performance, and leveraging best practices to ensure smooth interactions across all devices.",
   //   interests: [
   //     'I have a deep passion for frontend development, focusing on performance optimization, state management, and intuitive UI/UX.',

@@ -79,6 +79,9 @@ export default defineConfig({
     new rspack.HtmlRspackPlugin({
       template: './public/index.html',
     }),
+    new rspack.CopyRspackPlugin({
+      patterns: [{ from: 'public/preview.html', to: 'preview.html' }],
+    }),
     isDev ? new RefreshPlugin() : null,
   ].filter(Boolean),
   optimization: {

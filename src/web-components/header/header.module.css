@@ -105,6 +105,43 @@
   left: 10px;
 }
 
+.run {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 18px;
+  padding: 0 8px;
+  border: 1px solid rgb(var(--border3));
+  border-radius: var(--secondary-radius);
+  background: transparent;
+  color: rgb(var(--light-yellow-green));
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.run:hover,
+.run:focus-visible {
+  background: rgb(var(--ternary));
+}
+
+.run:focus-visible {
+  outline: 2px solid rgb(var(--url-link));
+  outline-offset: 2px;
+}
+
+.run:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.runIcon {
+  width: 12px;
+  height: 12px;
+}
+
 .cross {
   border-radius: 50%;
   height: 12px;

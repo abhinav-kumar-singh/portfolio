@@ -1,11 +1,4 @@
-import {
-  Blocks,
-  CircleUserRound,
-  Files,
-  GitGraph,
-  Search,
-  Settings,
-} from 'lucide-react';
+import { CircleUserRound, Files, Search } from 'lucide-react';
 
 enum ACTION {
   Files = 'Files',
@@ -27,16 +20,6 @@ const LEFT_TOP_ACTION = [
     comp: Search,
     label: ACTION.Search,
   },
-  {
-    id: 3,
-    comp: GitGraph,
-    label: ACTION.GitGraph,
-  },
-  {
-    id: 4,
-    comp: Blocks,
-    label: ACTION.Blocks,
-  },
 ];
 
 const LEFT_BOTTOM_ACTION = [
@@ -44,11 +27,6 @@ const LEFT_BOTTOM_ACTION = [
     id: 1,
     comp: CircleUserRound,
     label: ACTION.Profile,
-  },
-  {
-    id: 2,
-    comp: Settings,
-    label: ACTION.Settings,
   },
 ];
 

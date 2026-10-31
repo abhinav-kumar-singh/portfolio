@@ -7,10 +7,12 @@ const Modal = ({
   children,
   onclose,
   onRefresh,
+  url = 'http://localhost:3000',
 }: {
   children: React.ReactNode;
   onclose: () => void;
   onRefresh?: () => void;
+  url?: string;
 }) => {
   const [rotationCount, setRotationCount] = useState(0);
 
@@ -51,7 +53,7 @@ const Modal = ({
                 onClick={handleRotate}
                 id="refresh"
               />
-              <div className={styles.url}>http://localhost:3000</div>
+              <div className={styles.url}>{url}</div>
             </div>
             <div className={styles.children_container}>{children}</div>
           </div>
