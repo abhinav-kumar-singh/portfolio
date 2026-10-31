@@ -233,30 +233,3 @@
   border-top: 1px solid rgb(45, 45, 45);
   background: rgb(var(--quaternary));
 }
-
-/* Exectuted Page */
-
-.executed_page_container {
-  height: 100%;
-  width: 500px;
-  z-index: 1;
-  position: absolute;
-  background-color: rgb(var(--primary-text-color));
-  position: absolute;
-  top: 0px;
-  right: 0px;
-}
-
-.close_container {
-  height: 40px;
-  background: rgb(var(--ternary));
-  color: rgb(var(--primary-text-color));
-  padding-left: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.close_icon {
-  padding: 5px;
-  cursor: pointer;
-}

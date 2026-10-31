@@ -20,12 +20,39 @@ const later = (delay: number, action: () => void) => {
   timers.push(setTimeout(action, delay));
 };
 
+const warmPreview = (mode: PreviewRun): void => {
+  const file = FileName[useFileStore.getState().name];
+  const only =
+    mode === 'section'
+      ? {
+          'About.ts': 'about',
+          'Experiences.ts': 'work',
+          'Projects.ts': 'projects',
+          'Skills.ts': 'skills',
+          'Contact.ts': 'contact',
+        }[file]
+      : '';
+  const page = only ? `/preview.html?only=${only}` : '/preview.html';
+  void fetch(page);
+  void import('./PreviewGate');
+  const threeSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+  if (!document.querySelector(`link[href="${threeSrc}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'script';
+    link.href = threeSrc;
+    document.head.appendChild(link);
+  }
+};
+
 const startPreview = (mode: PreviewRun): void => {
   if (useFileStore.getState().running) {
     return;
   }
   clearTimers();
   setRunning(true);
+  warmPreview(mode);
   const file = FileName[useFileStore.getState().name];
   const target = mode === 'section' ? file : 'preview';
 

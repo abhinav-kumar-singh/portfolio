@@ -6,14 +6,6 @@ import useFileStore from '../../store/file.store';
 
 const PreviewGate = lazy(() => import('../../preview/PreviewGate'));
 
-const BuildStatus = () => {
-  return (
-    <div className={styles.build} role="status">
-      Building preview
-    </div>
-  );
-};
-
 const PreviewSlot = () => {
   const preview = useFileStore((state) => state.preview);
 
@@ -22,7 +14,7 @@ const PreviewSlot = () => {
   }
 
   return (
-    <Suspense fallback={<BuildStatus />}>
+    <Suspense fallback={null}>
       <PreviewGate />
     </Suspense>
   );

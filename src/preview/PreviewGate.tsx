@@ -38,9 +38,10 @@ const PreviewFrame = ({
   fileLabel = 'http://localhost:3000',
 }: PreviewFrameProps) => {
   const [frameKey, setFrameKey] = useState(0);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!onClose) {
+    if (!onClose || !ready) {
       return undefined;
     }
 
@@ -57,7 +58,7 @@ const PreviewFrame = ({
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKeyDown);
     };
-  }, [onClose]);
+  }, [onClose, ready]);
 
   const src = only ? `/preview.html?only=${only}` : '/preview.html';
   const frame = (
@@ -66,23 +67,29 @@ const PreviewFrame = ({
       className={styles.frame}
       title="Abhinav Kumar Singh"
       src={src}
+      onLoad={() => setReady(true)}
     />
   );
 
   if (partial && onClose) {
     return (
-      <Modal
-        onclose={onClose}
-        onRefresh={() => setFrameKey((key) => key + 1)}
-        url={fileLabel}
-      >
-        {frame}
-      </Modal>
+      <div className={ready ? undefined : styles.pending}>
+        <Modal
+          onclose={onClose}
+          onRefresh={() => {
+            setReady(false);
+            setFrameKey((key) => key + 1);
+          }}
+          url={fileLabel}
+        >
+          {frame}
+        </Modal>
+      </div>
     );
   }
 
   return (
-    <div className={styles.shell}>
+    <div className={ready ? styles.shell : styles.pending}>
       {onClose ? (
         <button className={styles.editor} onClick={onClose}>
           Editor

@@ -9,6 +9,13 @@
   background: #060a14;
 }
 
+.pending {
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .backdrop {
   display: flex;
   align-items: center;
