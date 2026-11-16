@@ -3,6 +3,7 @@ import * as styles from './web.module.css';
 import './web_app.module.css';
 import { Body, Footer, Header } from '../../web-components';
 import useFileStore from '../../store/file.store';
+import RunTour from '../../common-component/run-tour/RunTour';
 
 const PreviewGate = lazy(() => import('../../preview/PreviewGate'));
 
@@ -36,6 +37,7 @@ const WebView = (): JSX.Element => {
         </section>
       </section>
       <PreviewSlot />
+      <RunTour />
     </>
   );
 };

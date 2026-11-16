@@ -8,6 +8,7 @@ import { FileName } from '../../../constants/files.types';
 const Primary = (): JSX.Element => {
   const name = useFileStore((state) => state.name);
   const running = useFileStore((state) => state.running);
+  const preview = useFileStore((state) => state.preview);
   return (
     <div className={styles.primary}>
       <div className={styles.header_action}>
@@ -17,9 +18,11 @@ const Primary = (): JSX.Element => {
       </div>
       {FileName[name]} - portfolioapp
       <button
-        className={styles.run}
+        className={`${styles.run} ${!preview ? styles.runAttention : ''}`}
         disabled={running}
         onClick={() => startPreview('full')}
+        title="Run the portfolio preview"
+        data-tour="global-run"
       >
         <Play className={styles.runIcon} aria-hidden="true" />
         Run

@@ -10,6 +10,7 @@ import Terminal from './terminal/Terminal';
 const Editor = () => {
   const name = useFileStore((state) => state.name);
   const running = useFileStore((state) => state.running);
+  const preview = useFileStore((state) => state.preview);
 
   return (
     <>
@@ -21,9 +22,11 @@ const Editor = () => {
             <X className={styles.file_icon} />
           </div>
           <button
-            className={styles.execute}
+            className={`${styles.execute} ${!preview ? styles.executeAttention : ''}`}
             disabled={running}
             onClick={() => startPreview('section')}
+            title="Run this section preview"
+            data-tour="section-run"
           >
             <Play className={styles.execute_icon} aria-hidden="true" />
             Run

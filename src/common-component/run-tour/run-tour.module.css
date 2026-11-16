@@ -1,0 +1,48 @@
+.tour {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.58);
+}
+
+.spotlight {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid rgb(var(--light-yellow-green));
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px rgba(var(--light-yellow-green), 0.18), 0 0 20px rgba(var(--light-yellow-green), 0.25);
+  pointer-events: none;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 2;
+  width: 260px;
+  padding: 14px;
+  border: 1px solid rgb(var(--border3));
+  border-radius: 6px;
+  background: rgb(var(--ternary));
+  color: rgb(var(--primary-text-color));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.step {
+  color: rgb(var(--light-yellow-green));
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tooltip h2 { margin: 6px 0 4px; font-size: 14px; }
+.tooltip p { margin: 0; color: rgb(var(--light-grey)); font-size: 12px; line-height: 1.5; }
+
+.actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-top: 14px; }
+.actions button { border: 0; border-radius: 4px; padding: 5px 9px; font: inherit; font-size: 11px; cursor: pointer; }
+.skip { background: transparent; color: rgb(var(--light-grey)); }
+.next { background: rgb(var(--light-yellow-green)); color: rgb(var(--black)); }
+.actions button:focus-visible { outline: 2px solid rgb(var(--url-link)); outline-offset: 2px; }
