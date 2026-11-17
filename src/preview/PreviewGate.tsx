@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ArrowLeft, Code2 } from 'lucide-react';
 import useFileStore, {
   closePreview,
   pushLog,
@@ -91,9 +92,17 @@ const PreviewFrame = ({
   return (
     <div className={ready ? styles.shell : styles.pending}>
       {onClose ? (
-        <button className={styles.editor} onClick={onClose}>
-          ← Back to editor
+        <button className={styles.editor} onClick={onClose} title="Return to the portfolio workspace">
+          <ArrowLeft className={styles.editorIcon} aria-hidden="true" />
+          <Code2 className={styles.editorIcon} aria-hidden="true" />
+          Back to workspace
         </button>
+      ) : null}
+      {onClose ? (
+        <div className={styles.previewStatus} role="status">
+          <span className={styles.statusDot} aria-hidden="true" />
+          Preview running · localhost:3000
+        </div>
       ) : null}
       {frame}
     </div>

@@ -7,6 +7,7 @@
 
 .shell {
   background: #060a14;
+  animation: previewEnter 0.32s ease-out both;
 }
 
 .pending {
@@ -60,23 +61,62 @@
   padding: 8px 14px;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-  animation: editorPulse 1.8s ease-in-out infinite;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: border-color 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .editor:hover,
 .editor:focus-visible {
-  border-color: #2dd4bf;
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.12);
+  color: #f8fafc;
   outline: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(52, 211, 153, 0.16);
 }
 
-@keyframes editorPulse {
-  0%,
-  100% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 0 rgba(45, 212, 191, 0); }
-  50% { box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(45, 212, 191, 0.2); }
+.editorIcon { width: 14px; height: 14px; }
+
+.previewStatus {
+  position: absolute;
+  z-index: 2;
+  right: 16px;
+  bottom: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 999px;
+  background: rgba(6, 10, 20, 0.72);
+  color: #94a3b8;
+  font: 500 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.12);
+}
+
+@keyframes previewEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .editor { animation: none; }
+  .shell { animation: none; }
 }
 
 @media (max-width: 800px) {

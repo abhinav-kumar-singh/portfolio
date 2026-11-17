@@ -28,7 +28,7 @@ const Editor = () => {
             title="Run this section preview"
             data-tour="section-run"
           >
-            <Play className={styles.execute_icon} aria-hidden="true" />
+            <Play className={styles.execute_icon} strokeWidth={2.5} aria-hidden="true" />
             Run
           </button>
         </section>

@@ -24,7 +24,7 @@ const Primary = (): JSX.Element => {
         title="Run the portfolio preview"
         data-tour="global-run"
       >
-        <Play className={styles.runIcon} aria-hidden="true" />
+        <Play className={styles.runIcon} strokeWidth={2.5} aria-hidden="true" />
         Run
       </button>
     </div>

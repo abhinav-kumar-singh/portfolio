@@ -148,17 +148,29 @@
   gap: 4px;
   height: 22px;
   margin: 0 8px 6px 0;
-  border: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
   padding: 0 8px;
   cursor: pointer;
-  color: rgb(255, 255, 255);
-  background: transparent;
+  color: rgb(var(--light-yellow-green));
+  background: rgba(var(--light-yellow-green), 0.08);
   font: inherit;
   font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
-.execute:hover {
-  color: rgb(255, 255, 255);
+.execute:hover,
+.execute:focus-visible {
+  color: rgb(var(--light-yellow-green));
+  background: rgba(var(--light-yellow-green), 0.16);
+  border-color: rgb(var(--light-yellow-green));
+}
+
+.execute:focus-visible {
+  outline: 2px solid rgb(var(--url-link));
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgb(var(--url-link) / 0.14);
 }
 
 .executeAttention {
