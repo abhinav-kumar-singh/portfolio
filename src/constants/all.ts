@@ -221,7 +221,7 @@ const DEVELOPER = {
       href: 'https://drive.google.com/file/d/1YmCspyEuRbPcZSxO5IIAhD_p0TwVa_72/view',
     },
   ],
-  bio: "I'm a fullstack developer with 4+ years of experience building high-performance, scalable web applications with React, TypeScript, and modern web technologies. I've shipped AI and LLM-driven features used by 10k+ people, cut load times by 75%+, and delivered work across 10+ modules. I use Claude Code, Copilot, and MCP daily to move faster on delivery, review, and testing. I graduated from KIIT with a B.Tech in Computer Science Engineering (CGPA 9.25).",
+  bio: "I'm a fullstack developer with 5+ years of experience building high-performance, scalable web applications with React, TypeScript, and modern web technologies. I've shipped AI and LLM-driven features used by 10k+ people, cut load times by 75%+, and delivered work across 10+ modules. I use Claude Code, Copilot, and MCP daily to move faster on delivery, review, and testing. I graduated from KIIT with a B.Tech in Computer Science Engineering (CGPA 9.25).",
   interests: [
     'I care about fullstack product work: React and TypeScript on the client, and Node, PostgreSQL, and Prisma when the feature needs a service behind it.',
     'I like building micro-frontends, design systems, and feature-flagged rollouts that other teams can actually consume.',

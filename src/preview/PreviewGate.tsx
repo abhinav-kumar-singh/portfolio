@@ -92,7 +92,7 @@ const PreviewFrame = ({
     <div className={ready ? styles.shell : styles.pending}>
       {onClose ? (
         <button className={styles.editor} onClick={onClose}>
-          Editor
+          ← Back to editor
         </button>
       ) : null}
       {frame}
